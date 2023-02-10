@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am Thermometer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            height: 42rem;
+        }
+
+        .outerdiv {
+            background-color: #13a9de;
+            width: 56rem;
+            font-size: 3rem;
+            padding: 100px;
+            border-radius: 37px;
+            box-shadow: 12px 13px 20px rgb(176 161 161 / 51%);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outerdiv">
+        <div class="innerdiv">
+            <h1>I am Thermometer <span id="temp" class="fa"></span>
+            </h1>
+
+        </div>
+    </div>
+    <script>
+        const tempload = () => {
+            let temp = document.getElementById('temp')
+            temp.innerHTML = "&#xf2cb"
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2ca"
+                temp.style.color = 'yellow'
+            }, 1000)
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c9"
+            }, 2000)
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c8"
+            }, 3000)
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c7"
+                temp.style.color = 'red'
+            }, 4000)
+        }
+        tempload()
+        setInterval(tempload, 5000);
+    </script>
+</body>
+
+</html>
